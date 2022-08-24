@@ -1,0 +1,40 @@
+body {
+    text-align: center;
+    font-family: Helvetica;
+    color: white;
+    background-color: DodgerBlue;
+}
+table {
+    width: 100%;
+}
+.bar {
+    width: 100%;
+    background-color: MediumSeaGreen;
+}
+.bartext {
+    color: gray;
+}
+hr {
+    width: 75%;
+}
+p {
+    line-height: 2;
+}
+ul {
+    line-height: 1.5;
+    margin: auto;
+    width: 35%;
+}
+
+a:link {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: black;
+}
+a:active {
+    color: black;
+}

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Coder Merlin Digital Portfolio</title>
+  </head>
+
+  <body>
+    <table class="bar">
+      <tr class="bartext">
+	<th><a href="index.html">Caysen Mayo</a></th>
+	<th><a href="ISP.html">ISP</a></th>
+	<th><a href="Classes.html">Classes</a></th>
+	<!-- Why is the digital portfolio important to me? -->
+	<th>About Me</th>
+      </tr>
+    </table>
+    <h1>About Me</h1>
+    <hr>
+    <h2>Basic Info</h2>
+    <p>My name is Caysen Mayo and I'm an aspring Data Engineer currently in Computer Science II. <br> I'm a junior attending Allen High School in Allen, Texas.</p>
+    <h2>Projects</h2>
+    <ul>
+      <li>Doodle Jump Extreme (ISP)</li>
+      <li>OrtusTFT (Personal project)</li>
+    </ul>
+    <h2>Extracurricular Activites</h2>
+    <p>Outside of school, I like to participate in bowling leagues that are both causal and competive. <br> I'm also planning on joining my school's OC3 this year which is a competive coding competition.
+    <h2>Future Plans</h2>
+    <ul>
+      <li>Complete Computer Science II and III</li>
+      <li>Complete <a href="https://github.com/ossu/computer-science" target="_blank">OSSU</a></li>
+    </ul>
+    <h2>Why is this digital portfolio important to me?</h2>
+    <p>This digital portfolio is important to me because it showcases all of my current achievements. <br> I also plan to keep it up to date with all of my projects whether in Computer Science or outside class. <br> I think of it as a way to keep track of my projects.</p>
+  </body>
+</html>

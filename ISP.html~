@@ -1,0 +1,43 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Coder Merlin Digital Portfolio</title>
+  </head>
+  
+  <body>
+    <table class="bar">
+      <tr class="bartext">
+	<th><a href="index.html">Caysen Mayo</a></th>
+	<th>ISP</th>
+	<th><a href="Classes.html">Classes</a></th>
+	<th><a href="About.html">About Me</a></th>
+      </tr>
+    </table>
+    
+    <h1>Doodle Jump Extreme</h1>
+    <hr>
+    <h2>Screenshots</h2>
+    <table>
+      <tr>
+	<th><img src="dje-player.png"><p>The player as Tux, the mascot of Linux.</p></th>
+	<th><img src="doom-background.png" width="500" height="282"><p>Our background adds to the "extreme" aspect of the game.</p></th>
+      </tr>
+    </table>
+    <h2>Concept</h2>
+    <p>My ISP was heavily inspired by the real game Doodle Jump. <br> You control a black peguin while jumping from platform to platform avoiding the red falling peguin. <br> There are moving and static platforms and a scoreboard for your height.</p>
+    <h2>Motivation</h2>
+    <p>My group and I enjoyed playing Doodle Jump so we wanted to create a knock off version of it. <br> As the name imples, it is extremely difficult!</p>
+    <h2>Code segments</h2>
+    <img src="code-screen1.png">
+    <p>This segment of code showcases how our collison system and our movement system worked. <br> The movement system works by finding where the cursor and the player are and moving the player towards the mouse if it's far away enough from the mouse. <br> The collison system works by using a containment to see if the player is in contact with a platform.</p>
+    <hr>
+    <img src="code-screen2.png">
+    <p>This segment of code showcases how the platforms spawned. <br> To start, it would first determine how far up the player was and pick a random number depending on the height. <br> Then it would determine where to spawn the platform using random numbers.</p>
+    <hr>
+    <img src="code-screen3.png">
+    <p>This segment of code showcases how our background image was displayed. <br> The image would first be initalized, then it would setup itself up, then render in the background layer.</p>
+    <h2>Conclusion</h2>
+    <p>The game itself turned out to be a success and was fun to make and play. <br> However, we did not have enough time to implent everything we wanted to and there were a few issues (not bugs) with the game in general.
+  </body>
+</html>

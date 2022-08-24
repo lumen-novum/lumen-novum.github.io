@@ -4,18 +4,15 @@
     
     <title>Coder Merlin Digital Portfolio</title>
   </head>
-  
   <body>
     <table class="bar">
       <tr class="bartext">
-	<th>Caysen Mayo</th>
+	<th><a href="index.html">Caysen Mayo</a></th>
 	<th><a href="ISP.html">ISP</a></th>
 	<th><a href="Classes.html">Classes</a></th>
-	<th><a href="Fingerprinting.html">Fingerprinting</a></th>
+	<th>Fingerprinting</th>
 	<th><a href="About.html">About Me</a></th>
       </tr>
     </table>
-    <h1 id="center">Welcome!</h1>
-    <p id="center">This is my digital portfolio for Coder Merlin. To get started, click on one of the links above.</p>
   </body>
 </html>
