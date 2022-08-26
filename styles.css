@@ -14,6 +14,9 @@ table {
 .bartext {
     color: gray;
 }
+.fingerprinting {
+    text-indent: 100px;
+}
 hr {
     width: 75%;
 }
