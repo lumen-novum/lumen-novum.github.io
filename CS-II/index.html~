@@ -12,12 +12,13 @@
 	<th>Caysen Mayo</th>
 	<th><a href="ISP.html">ISP</a></th>
 	<th><a href="Classes.html">Classes</a></th>
-	<th><a href="CS-II/index.html">CS-II</a></th>
+	<th>Essays</th>
 	<th><a href="About.html">About Me</a></th>
       </tr>
     </table>
-    <h1>Welcome!</h1>
-    <p>This is my digital portfolio for Coder Merlin. To get started, click on one of the links above.</p>
-    <p><a href="https://lumen-novum.github.io">Github Pages Link</a></p>
+    <h1>List of Essays</h1>
+    <ul>
+      <li><a href="AI%20Sentience.html">AI Sentience</a></li>
+    </ul>
   </body>
 </html>
