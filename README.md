@@ -1,6 +1,6 @@
 # Digital Portfolio
 ### Welcome!
-This website showcases everything I've done since my second year of computer science.
+This website showcases everything I've done since my second year of computer science in high school.
 
 The digital portfolio can be viewed from [Coder Merlin][1] or [Github Pages][2].
 
