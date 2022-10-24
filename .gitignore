@@ -1,5 +1,5 @@
-# Permission Script
-setPermissions.sh
+# Website scripts
+*.sh
 
 # Backup Emacs Files
 *.*~
