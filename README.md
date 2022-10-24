@@ -1,6 +1,8 @@
-# Coder Merlin Digital Portfolio
-My digital portfolio for my CS II class.
+# Digital Portfolio
+### Welcome!
+This website showcases everything I've done since my second year of computer science.
 
-The digital portfolio can be viewed from Coder Merlin [here.](https://codermerlin.com/users/caysen-mayo/Digital%20Portfolio/index.html)
+The digital portfolio can be viewed from [Coder Merlin][1] or [Github Pages][2].
 
-[Github Pages Link](https://lumen-novum.github.io/)
+[1]: https://codermerlin.com/users/caysen-mayo/Digital%20Portfolio/index.html
+[2]: https://lumen-novum.github.io/
