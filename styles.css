@@ -1,43 +1,45 @@
+@font-face {
+    font-family: Dosis;
+    src: url(fonts/Dosis/Dosis-Regular.otf);
+}
+
 body {
-    text-align: center;
-    font-family: Helvetica;
+    font-family: "Dosis";
     color: white;
-    background-color: DodgerBlue;
-}
-table {
-    width: 100%;
-}
-.bar {
-    width: 100%;
-    background-color: MediumSeaGreen;
-}
-.bartext {
-    color: gray;
-}
-.fingerprinting {
-    text-indent: 100px;
-}
-hr {
-    width: 75%;
-}
-p {
-    line-height: 2;
-}
-ul {
-    line-height: 1.5;
-    margin: auto;
-    width: 35%;
+    background-color: #16213E;
+    font-size: 20px;
 }
 
 a:link {
-    color: white;
+    color: #E94560;
 }
 a:visited {
-    color: white;
+    color: #E94560;
 }
 a:hover {
-    color: black;
+    color: #533483;
 }
 a:active {
-    color: black;
+    color: #16213E;
+}
+
+.web-menu {
+    overflow: hidden;
+    background-color: #0F3460;
+    font-size: 40px;
+}
+
+.web-menu a {
+    padding-right: 50px;
+    float: left;
+}
+
+.web-menu img {
+    width: 45px;
+    height: 45px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 100px;
 }
