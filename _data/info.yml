@@ -1,0 +1,22 @@
+- topic: Role
+  description: Student
+- topic: University
+  description: UTD
+- topic: Major
+  description: Computer Science
+- topic: Class
+  description: 2028
+- topic: Previous Projects
+  description: Time Management App (Github)
+- topic: Current Project
+  description: DSSC Tech Team
+- topic: Languages
+  description: Python, Swift, C, C++, SQL, Bash
+- topic: Tools
+  description: Git, Github, Docker, Agile Sprints, MySQL
+- topic: Frameworks
+  description: Flask, Vapor, Jekyll
+- topic: Aspiring to be
+  description: Backend Developer
+- topic: Hobbies
+  description: 3D Printing, Homelab, Hockey

@@ -1,0 +1,20 @@
+- row: top
+  colors:
+    - hex: "#14181d"
+    - hex: "#a64431"
+    - hex: "#57bf37"
+    - hex: "#c6c43f"
+    - hex: "#2d42c0"
+    - hex: "#b148b8"
+    - hex: "#58c2c5"
+    - hex: "#c7c7c7"
+- row: bottom
+  colors:
+    - hex: "#676767"
+    - hex: "#cf7e77"
+    - hex: "#81e397"
+    - hex: "#eae14a"
+    - hex: "#a7aaec"
+    - hex: "#d382db"
+    - hex: "#8ef9fd"
+    - hex: "#fefefe"

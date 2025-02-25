@@ -1,21 +1,21 @@
-<html>
-    <head>
-        <style>
-            h1 {
-                font-family: "Courier New", monospace;
-                color: white;
-                position: absolute;
-				top: 50%;
-                left: 50%;
-            }
-
-            body {
-                background-color: black;
-            }
-        </style>
-        <title>Digital Portfolio</title>
-    </head>
-    <body>
-        <h1>Coming soon...</h1>
-    </body>
-</html>
+---
+layout: default
+command: cat profile.md
+---
+<h2>Hello! 안녕하세요!</h2>
+<p>My name is Caysen Mayo. I'm a freshman studying Computer Science at the University of Texas at Dallas.</p>
+<p>Here's some more information about myself:</p>
+<p>caysen-mayo@UTD ~ % neofetch</p>
+<div class="d-flex">
+    {% include ascii-utd.html %}
+    <div class="ms-4">
+        <p class="mt-0 mb-0" style="color: #81e397;">caysen-mayo @ University of Texas at Dallas</p>
+        <p class="mb-0">-------------------------------------------</p>
+        <p>
+            {% for item in site.data.info %}
+            <span class="highlight">{{ item.topic }}:</span> {{ item.description }}<br>
+            {% endfor %}
+        </p>
+        {% include color-boxes.html %}
+    </div>
+</div>

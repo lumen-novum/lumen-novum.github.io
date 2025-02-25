@@ -1,0 +1,35 @@
+.fake-btn {
+    width: 1em;
+    height: 1em;
+}
+
+.terminal-colors {
+    width: 2em;
+    height: 1.5em;
+}
+
+.red-btn {
+    background: #FF5D5B;
+}
+
+.yellow-btn {
+    background: #FFBB39;
+}
+
+.green-btn {
+    background: #00CD4E;
+}
+
+* {
+    font-family: "Anonymous Pro", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.highlight {
+    color: #cf7e77;
+}
+
+.forest {
+    color: #57bf37;
+}

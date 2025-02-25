@@ -1,0 +1,9 @@
+<div>
+    {% for item in site.data.colors %}
+    <div class="d-flex">
+        {% for color in item.colors %}
+        <div class="terminal-colors" style="background: {{ color.hex }};"></div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
