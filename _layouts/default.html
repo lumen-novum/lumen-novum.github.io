@@ -9,6 +9,7 @@
     {% seo %}
   </head>
   <body>
+    {% if jekyll.environment != "screenshot" %}  
     <div class="desktop">
       <div class="taskbar">
         <button class="start-button" id="startButton" aria-expanded="false" aria-controls="startMenu"><img src="{{ "/assets/imgs/start-button.png" | relative_url }}" alt="Start" /></button>
@@ -50,6 +51,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
 
       <main class="window{% if page.centered %} centered{% endif %}">
         <div class="window-titlebar">
@@ -82,7 +84,6 @@
         </div>
       </div>
     -->
-    </div>
 
     <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
   </body>

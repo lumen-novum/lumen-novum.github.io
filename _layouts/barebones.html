@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
+    {% seo %}
+  </head>
+  <body>
+    <main class="window{% if page.centered %} centered{% endif %}">
+      <div class="window-titlebar">
+        <div class="window-title">{{ page.title }}</div>
+        <div class="window-controls">
+          <span class="control"><img src="{{ "/assets/imgs/close-icon.png" | relative_url }}" alt="Close" /></span>
+        </div>
+      </div>
+      <div class="window-content">
+        {{ content }}
+      </div>
+    </main>
+  </body>
+</html>

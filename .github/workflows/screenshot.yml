@@ -22,13 +22,15 @@ jobs:
       run: bundle install
 
     - name: Build Jekyll site
+      env:
+        JEKYLL_ENV: screenshot
       run: bundle exec jekyll build -d _site
 
     - name: Start simple HTTP server (background)
       run: |
         cd _site
         python3 -m http.server 4000 &
-        sleep 2
+        sleep 10
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
