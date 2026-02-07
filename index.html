@@ -1,0 +1,60 @@
+---
+title: "My Digital Portfolio"
+layout: default
+centered: true
+---
+
+<section class="intro">
+  <div class="profile-frame">
+    <img class="profile-photo" src="{{ "/assets/imgs/profile.jpeg" | relative_url }}" alt="Caysen Mayo">
+    <div class="profile-label">User.bmp</div>
+  </div>
+  <div class="intro-text">
+    <h1>Hi, I'm Caysen</h1>
+    <p>
+      I'm a general engineering student attending Texas A&M University. I enjoy 3D printing, working out, and building fun projects.
+    </p>
+    <div class="button-row">
+      <a class="btn" href="#projects">View Projects</a>
+      <a class="btn" href="mailto:hello@example.com">I'm Feeling Lucky</a>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    {% for project in site.data.projects %}
+    <article class="project-card">
+      <h3>
+        <svg class="project-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="3" y="6" width="26" height="16" fill="#86b6ff" stroke="#284a86" stroke-width="2" />
+          <rect x="6" y="9" width="20" height="10" fill="#dfe8ff" />
+          <rect x="10" y="23" width="12" height="3" fill="#444" />
+        </svg>
+        {{ project.title }}
+      </h3>
+      <p>{{ project.description }}</p>
+      <div class="project-meta">{{ project.stack }}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <a href="mailto:hello@example.com">Coming Soon!</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">GitHub</span>
+      <a href="https://github.com/lumen-novum">github.com/lumen-novum</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">LinkedIn</span>
+      <a href="https://www.linkedin.com/in/caysen-mayo/">linkedin.com/in/caysen-mayo</a>
+    </div>
+  </div>
+</section>

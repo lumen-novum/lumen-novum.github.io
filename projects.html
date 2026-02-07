@@ -1,0 +1,26 @@
+---
+layout: default
+title: "All Projects"
+---
+
+<section class="projects">
+  <h2>Project Archive</h2>
+  <div class="projects-grid">
+    {% for project in site.projects %}
+    <article class="project-card">
+      <h3>
+        <a href="{{ project.url | relative_url }}">
+          <svg class="project-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="3" y="6" width="26" height="16" fill="#86b6ff" stroke="#284a86" stroke-width="2" />
+            <rect x="6" y="9" width="20" height="10" fill="#dfe8ff" />
+            <rect x="10" y="23" width="12" height="3" fill="#444" />
+          </svg>
+          <span>{{ project.title }}</span>
+        </a>
+      </h3>
+      <p>{{ project.description }}</p>
+      <div class="project-meta">{{ project.stack }}{% if project.year %} · {{ project.year }}{% endif %}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

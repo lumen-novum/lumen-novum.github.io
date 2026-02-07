@@ -1,0 +1,21 @@
+title: "Caysen's Digital Portfolio"
+description: "A retro Windows 98 themed portfolio on GitHub Pages"
+url: ""
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+
+# Projects collection
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Use the default build settings for GitHub Pages
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

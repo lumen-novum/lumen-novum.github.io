@@ -1,0 +1,14 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.bundle
+
+# Common generated folders
+vendor/bundle
+node_modules
+.env
+.venv
+
+# macOS
+.DS_Store

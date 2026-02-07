@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Caysen's Digital Portfolio</title>
+    <meta name="description" content="{{ site.description }}" />
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
+    {% seo %}
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="taskbar">
+        <button class="start-button" id="startButton" aria-expanded="false" aria-controls="startMenu"><img src="{{ "/assets/imgs/start-button.png" | relative_url }}" alt="Start" /></button>
+        <div class="taskbar-title">{{ site.title }}</div>
+        <div class="taskbar-clock" id="taskbarClock">12:00 PM</div>
+      </div>
+
+      <div class="desktop-icons">
+        <!-- Placeholder for real icons later on -->
+      </div>
+
+      <div class="start-menu" id="startMenu" hidden>
+        <div class="start-menu-header">
+          <span class="start-menu-logo">Windows 98</span>
+        </div>
+        <div class="start-menu-body">
+          <ul class="start-menu-list">
+            <li><a href="#projects">Programs</a></li>
+            <li><a href="{{ "/projects/" | relative_url }}">Documents</a></li>
+            <li><a href="#contact">Settings</a></li>
+            <li><a href="mailto:hello@example.com">Run...</a></li>
+          </ul>
+          <div class="start-menu-panel">
+            <div class="panel-group">
+              <div class="panel-title">Programs</div>
+              <a href="#projects">Portfolio.exe</a>
+              <a href="#projects">Projects.exe</a>
+            </div>
+            <div class="panel-group">
+              <div class="panel-title">Documents</div>
+              <a href="{{ "/projects/" | relative_url }}">All Projects</a>
+              <a href="{{ "/projects/" | relative_url }}">Case Studies</a>
+            </div>
+            <div class="panel-group">
+              <div class="panel-title">Settings</div>
+              <a href="#contact">Contact</a>
+              <a href="mailto:hello@example.com">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="window{% if page.centered %} centered{% endif %}">
+        <div class="window-titlebar">
+          <div class="window-title">{{ page.title }}</div>
+          <div class="window-controls">
+            <span class="control"><img src="{{ "/assets/imgs/close-icon.png" | relative_url }}" alt="Close" /></span>
+          </div>
+        </div>
+        <div class="window-content">
+          {{ content }}
+        </div>
+      </main>
+
+      <!--
+      <div class="window secondary-window">
+        <div class="window-titlebar">
+          <div class="window-title">Skills.txt</div>
+          <div class="window-controls">
+            <span class="control"><img src="{{ "/assets/imgs/close-icon.png" | relative_url }}" alt="Close" /></span>
+          </div>
+        </div>
+        <div class="window-content">
+          <ul class="skills-list">
+            <li>HTML + CSS</li>
+            <li>JavaScript</li>
+            <li>Accessibility</li>
+            <li>Design Systems</li>
+            <li>UI Prototyping</li>
+          </ul>
+        </div>
+      </div>
+    -->
+    </div>
+
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  </body>
+</html>
