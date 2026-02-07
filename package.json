@@ -1,0 +1,11 @@
+{
+  "name": "site-screenshot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "screenshot": "node scripts/screenshot.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
