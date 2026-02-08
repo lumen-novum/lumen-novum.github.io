@@ -7,6 +7,8 @@ on:
 jobs:
   screenshot:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - uses: actions/checkout@v4
 
@@ -50,6 +52,27 @@ jobs:
         SCREENSHOT_WIDTH: 1280
         SCREENSHOT_HEIGHT: 600
       run: python3 scripts/screenshot.py
+
+    - name: Publish screenshot to screenshot-placeholder
+      run: |
+        cp screenshot.png /tmp/screenshot.png
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git fetch origin screenshot-placeholder || true
+        if git show-ref --quiet refs/remotes/origin/screenshot-placeholder; then
+          git checkout -B screenshot-placeholder origin/screenshot-placeholder
+        else
+          git checkout --orphan screenshot-placeholder
+        fi
+        mkdir -p screenshots
+        cp /tmp/screenshot.png screenshots/latest.png
+        git add screenshots/latest.png
+        if git diff --cached --quiet; then
+          echo "No screenshot changes to publish."
+        else
+          git commit -m "Update screenshot"
+          git push origin screenshot-placeholder
+        fi
 
     - name: Upload screenshot artifact
       uses: actions/upload-artifact@v4
