@@ -53,7 +53,7 @@
       </div>
       {% endif %}
 
-      <main class="window{% if page.centered %} centered{% endif %}">
+      <main class="window {% if jekyll.environment == "screenshot" %}max{% else %}centered{% endif %}">
         <div class="window-titlebar">
           <div class="window-title">{{ page.title }}</div>
           <div class="window-controls">
