@@ -32,7 +32,7 @@ jobs:
       run: |
         cd _site
         python3 -m http.server 4000 &
-        sleep 10
+        sleep 2
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -50,29 +50,21 @@ jobs:
         SCREENSHOT_URL: http://localhost:4000
         SCREENSHOT_OUTPUT: screenshot.png
         SCREENSHOT_WIDTH: 1280
-        SCREENSHOT_HEIGHT: 600
+        SCREENSHOT_HEIGHT: 700
       run: python3 scripts/screenshot.py
 
-    - name: Publish screenshot to screenshot-placeholder
-      run: |
-        cp screenshot.png /tmp/screenshot.png
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git fetch origin screenshot-placeholder || true
-        if git show-ref --quiet refs/remotes/origin/screenshot-placeholder; then
-          git checkout -B screenshot-placeholder origin/screenshot-placeholder
-        else
-          git checkout --orphan screenshot-placeholder
-        fi
-        mkdir -p screenshots
-        cp /tmp/screenshot.png screenshots/latest.png
-        git add screenshots/latest.png
-        if git diff --cached --quiet; then
-          echo "No screenshot changes to publish."
-        else
-          git commit -m "Update screenshot"
-          git push origin screenshot-placeholder
-        fi
+    - name: Set release tag
+      run: echo "SCREENSHOT_TAG=screenshot-${GITHUB_RUN_ID}" >> "$GITHUB_ENV"
+
+    - name: Create release with screenshot
+      uses: softprops/action-gh-release@v2
+      env:
+        SCREENSHOT_TAG: screenshot-${{ github.run_id }}
+      with:
+        tag_name: ${{ env.SCREENSHOT_TAG }}
+        name: "Site screenshot ${{ env.SCREENSHOT_TAG }}"
+        files: screenshot.png
+        generate_release_notes: false
 
     - name: Upload screenshot artifact
       uses: actions/upload-artifact@v4
