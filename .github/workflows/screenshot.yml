@@ -49,8 +49,8 @@ jobs:
       env:
         SCREENSHOT_URL: http://localhost:4000
         SCREENSHOT_OUTPUT: screenshot.png
-        SCREENSHOT_WIDTH: 846
-        SCREENSHOT_HEIGHT: 800
+        SCREENSHOT_WIDTH: 770
+        SCREENSHOT_HEIGHT: 700
       run: python3 scripts/screenshot.py
 
     - name: Set release tag
