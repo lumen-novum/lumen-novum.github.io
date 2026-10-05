@@ -13,48 +13,47 @@ const updateClock = () => {
   clockElement.textContent = `${hours}:${minutes} ${period}`;
 };
 
-updateClock();
-setInterval(updateClock, 60_000);
-
-const closeStartMenu = () => {
-  if (!startMenu || !startButton) {
-    return;
-  }
-  startMenu.hidden = true;
-  startButton.setAttribute("aria-expanded", "false");
-};
-/*
-const toggleStartMenu = () => {
-  if (!startMenu || !startButton) {
-    return;
-  }
-  const isOpen = !startMenu.hidden;
-  startMenu.hidden = isOpen;
-  startButton.setAttribute("aria-expanded", (!isOpen).toString());
-};
-
-
-if (startButton) {
-  startButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    toggleStartMenu();
-  });
+if (clockElement) {
+  updateClock();
+  setInterval(updateClock, 60_000);
 }
 
-document.addEventListener("click", (event) => {
-  if (!startMenu || !startButton) {
-    return;
-  }
-  if (startMenu.hidden) {
-    return;
-  }
-  if (!startMenu.contains(event.target) && event.target !== startButton) {
-    closeStartMenu();
-  }
-});
-*/
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeStartMenu();
-  }
-});
+if (startButton && startMenu) {
+  const closeStartMenu = () => {
+    startMenu.hidden = true;
+    startButton.setAttribute("aria-expanded", "false");
+  };
+
+  startButton.addEventListener("click", () => {
+    const isOpen = !startMenu.hidden;
+    startMenu.hidden = isOpen;
+    startButton.setAttribute("aria-expanded", (!isOpen).toString());
+  });
+
+  const dismissOutside = (event) => {
+    if (
+      !startMenu.hidden &&
+      !startMenu.contains(event.target) &&
+      !startButton.contains(event.target)
+    ) {
+      closeStartMenu();
+    }
+  };
+
+  document.addEventListener("click", dismissOutside);
+  document.addEventListener("focusin", dismissOutside);
+
+  startMenu.addEventListener("click", (event) => {
+    const link = event.target.closest?.("a[href]");
+    if (link && startMenu.contains(link)) {
+      closeStartMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !startMenu.hidden) {
+      closeStartMenu();
+      startButton.focus();
+    }
+  });
+}

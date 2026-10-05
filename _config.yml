@@ -1,5 +1,5 @@
 title: "Caysen's Digital Portfolio"
-description: "A retro Windows 98 themed portfolio on GitHub Pages"
+description: "A Mac OS X Panther inspired portfolio on GitHub Pages"
 url: ""
 baseurl: ""
 markdown: kramdown
@@ -19,3 +19,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - MACOS_PANTHER_HANDOFF.md
+  - os_x_jaguar_trafficlights_by_p0t4t0x_d8gk9zc.psd
+  - scripts

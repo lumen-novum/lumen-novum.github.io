@@ -3,40 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Caysen's Digital Portfolio</title>
+    <title>{{ page.title | default: site.title | escape }}</title>
     <meta name="description" content="{{ site.description }}" />
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
     {% seo %}
   </head>
   <body>
-    {% if jekyll.environment != "screenshot" %}  
+    {% if jekyll.environment != "screenshot" %}
     <div class="desktop">
       <div class="taskbar">
-        <button class="start-button" id="startButton" aria-expanded="false" aria-controls="startMenu"><img src="{{ "/assets/imgs/start-button.png" | relative_url }}" alt="Start" /></button>
+        <button class="start-button" id="startButton" type="button" aria-label="Apple menu" aria-expanded="false" aria-controls="startMenu">
+          <svg class="apple-icon" viewBox="0 0 24 28" aria-hidden="true" focusable="false">
+            <path d="M12.5 7C12 3.8 14.3 1.1 17.1 1c.4 2.9-1.7 5.7-4.6 6Z" />
+            <path d="M19.8 15.1c0-2 1.1-3.6 2.6-4.5-1.2-2-3-3.1-5.1-3.1-2 0-3.2 1.2-4.9 1.2-1.6 0-2.8-1.2-4.7-1.2C3.4 7.5 1 11.3 1 15.6c0 4.3 3 11.2 6.1 11.2 1.8 0 2.6-1 4.5-1s2.7 1 4.6 1c2.7 0 5.1-4.9 5.8-7.1-1.4-.7-2.2-2.3-2.2-4.6Z" />
+          </svg>
+        </button>
         <div class="taskbar-title">{{ site.title }}</div>
-        <div class="taskbar-clock" id="taskbarClock">12:00 PM</div>
+        <div class="taskbar-clock" id="taskbarClock" aria-label="Current time">12:00 PM</div>
       </div>
 
       <div class="desktop-icons">
         <!-- Placeholder for real icons later on -->
       </div>
 
-      <div class="start-menu" id="startMenu" hidden>
+      <nav class="start-menu" id="startMenu" aria-label="Portfolio navigation" hidden>
         <div class="start-menu-header">
-          <span class="start-menu-logo">Windows 98</span>
+          <span class="start-menu-logo">Mac OS X</span>
+          <span class="start-menu-version">Panther · 10.3</span>
         </div>
         <div class="start-menu-body">
           <ul class="start-menu-list">
-            <li><a href="#projects">Programs</a></li>
-            <li><a href="{{ "/projects/" | relative_url }}">Documents</a></li>
-            <li><a href="#contact">Settings</a></li>
-            <li><a href="mailto:hello@example.com">Run...</a></li>
+            <li><a href="{{ "/" | relative_url }}#projects">Featured Projects</a></li>
+            <li><a href="{{ "/projects/" | relative_url }}">Project Archive</a></li>
+            <li><a href="{{ "/" | relative_url }}#contact">Contact</a></li>
+            <li><a href="mailto:hello@example.com">Email…</a></li>
           </ul>
           <div class="start-menu-panel">
             <div class="panel-group">
-              <div class="panel-title">Programs</div>
-              <a href="#projects">Portfolio.exe</a>
-              <a href="#projects">Projects.exe</a>
+              <div class="panel-title">Portfolio</div>
+              <a href="{{ "/" | relative_url }}#projects">Portfolio</a>
+              <a href="{{ "/" | relative_url }}#projects">Projects</a>
             </div>
             <div class="panel-group">
               <div class="panel-title">Documents</div>
@@ -44,20 +50,28 @@
               <a href="{{ "/projects/" | relative_url }}">Case Studies</a>
             </div>
             <div class="panel-group">
-              <div class="panel-title">Settings</div>
-              <a href="#contact">Contact</a>
+              <div class="panel-title">Connect</div>
+              <a href="{{ "/" | relative_url }}#contact">Contact</a>
               <a href="mailto:hello@example.com">Email</a>
             </div>
           </div>
         </div>
-      </div>
+      </nav>
       {% endif %}
 
       <main class="window {% if jekyll.environment == "screenshot" %}max{% else %}centered{% endif %}">
         <div class="window-titlebar">
           <div class="window-title">{{ page.title }}</div>
-          <div class="window-controls">
-            <span class="control"><img src="{{ "/assets/imgs/close-icon.png" | relative_url }}" alt="Close" /></span>
+          <div class="window-controls" aria-hidden="true">
+            <span class="control control-close">
+              <img src="{{ "/assets/imgs/jaguar-trafficlights/close.png" | relative_url }}" alt="" width="32" height="32" draggable="false" />
+            </span>
+            <span class="control control-minimize">
+              <img src="{{ "/assets/imgs/jaguar-trafficlights/minimize.png" | relative_url }}" alt="" width="32" height="32" draggable="false" />
+            </span>
+            <span class="control control-zoom">
+              <img src="{{ "/assets/imgs/jaguar-trafficlights/maximize.png" | relative_url }}" alt="" width="32" height="32" draggable="false" />
+            </span>
           </div>
         </div>
         <div class="window-content">
@@ -85,6 +99,9 @@
       </div>
     -->
 
+    {% if jekyll.environment != "screenshot" %}
+    </div>
+    {% endif %}
     <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
   </body>
 </html>

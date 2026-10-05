@@ -12,8 +12,16 @@
     <main class="window{% if page.centered %} centered{% endif %}">
       <div class="window-titlebar">
         <div class="window-title">{{ page.title }}</div>
-        <div class="window-controls">
-          <span class="control"><img src="{{ "/assets/imgs/close-icon.png" | relative_url }}" alt="Close" /></span>
+        <div class="window-controls" aria-hidden="true">
+          <span class="control control-close">
+            <img src="{{ "/assets/imgs/jaguar-trafficlights/close.png" | relative_url }}" alt="" width="32" height="32" draggable="false" />
+          </span>
+          <span class="control control-minimize">
+            <img src="{{ "/assets/imgs/jaguar-trafficlights/minimize.png" | relative_url }}" alt="" width="32" height="32" draggable="false" />
+          </span>
+          <span class="control control-zoom">
+            <img src="{{ "/assets/imgs/jaguar-trafficlights/maximize.png" | relative_url }}" alt="" width="32" height="32" draggable="false" />
+          </span>
         </div>
       </div>
       <div class="window-content">
