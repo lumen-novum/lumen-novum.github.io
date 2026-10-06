@@ -1,5 +1,5 @@
 ---
-title: "My Digital Portfolio"
+title: "Caysen Mayo | Computer Engineering"
 layout: default
 ---
 
@@ -10,12 +10,10 @@ layout: default
   </div>
   <div class="intro-text">
     <h1>Hi, I'm Caysen</h1>
-    <p>
-      I'm a general engineering student attending Texas A&M University. I enjoy 3D printing, working out, and building fun projects.
-    </p>
+    <p>I'm a Computer Engineering student at Texas A&amp;M University, graduating in 2028. My experience spans embedded systems, electrical hardware, Linux, and scientific data analysis. I'm exploring opportunities across computer and electrical engineering.</p>
     <div class="button-row">
       <a class="btn" href="#projects">View Projects</a>
-
+      <a class="btn" href="#research">Explore Research</a>
     </div>
   </div>
 </section>
@@ -23,29 +21,87 @@ layout: default
 <section id="projects" class="projects">
   <h2>Featured Projects</h2>
   <div class="projects-grid">
-    {% for project in site.data.projects %}
+    {% assign featured_projects = site.data.projects | sort: "date" | reverse %}
+    {% for project in featured_projects %}
     <article class="project-card">
-      <h3>
-        <svg class="project-icon" viewBox="0 0 32 32" aria-hidden="true">
-          <rect x="3" y="6" width="26" height="16" fill="#86b6ff" stroke="#284a86" stroke-width="2" />
-          <rect x="6" y="9" width="20" height="10" fill="#dfe8ff" />
-          <rect x="10" y="23" width="12" height="3" fill="#444" />
-        </svg>
-        {{ project.title }}
-      </h3>
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
       <p>{{ project.description }}</p>
+      <div class="project-meta">{{ project.date_label }} · {{ project.status }}</div>
       <div class="project-meta">{{ project.stack }}</div>
+      <p class="project-card-link"><a href="{{ project.url | relative_url }}">Read case study</a></p>
     </article>
     {% endfor %}
   </div>
+  <p><a href="{{ "/projects/" | relative_url }}">Browse all project case studies</a></p>
+</section>
+
+<section id="research" class="portfolio-section">
+  <h2>Research</h2>
+  <article class="project-card">
+    <h3>Asteroid Photometry · NSF REU</h3>
+    <p>During a 10-week Physics &amp; Astronomy REU at East Texas A&amp;M University, I collected and analyzed astronomical data to study asteroid rotation.</p>
+    <div class="project-meta">June–August 2026</div>
+    <ul>
+      <li>Calibrated more than 1,300 CCD images in MaxIm DL using dark, flat, and bias frames.</li>
+      <li>Used differential photometry and Fourier analysis in MPO Canopus to derive lightcurves and rotational periods for six asteroids.</li>
+      <li>Generated 3D shape estimates and coauthored a first-author manuscript.</li>
+    </ul>
+    <p><strong>Manuscript submitted:</strong> Mayo, C., and Montgomery, K., “Rotational Periods of Six Asteroids with Lightcurves,” 2026, <cite>Minor Planet Bulletin</cite>. Not yet published.</p>
+    <p class="project-card-link"><a href="https://www.etamu.edu/news/student-researchers-showcase-summer-discoveries-at-east-texas-am-reu-symposium/">Read the university's research coverage</a></p>
+  </article>
+</section>
+
+<section id="background" class="portfolio-section">
+  <h2>Education &amp; Skills</h2>
+  <div class="projects-grid">
+    <article class="project-card">
+      <h3>Texas A&amp;M University</h3>
+      <p>Computer Engineering · Expected graduation 2028<br>GPA: 4.0/4.0</p>
+      <p class="project-card-link">Coursework: Digital Systems Design, Data Structures &amp; Algorithms, Discrete Math, University Physics, Calculus, Differential Equations, and Linear Algebra.</p>
+    </article>
+    <article class="project-card">
+      <h3>Technical Skills</h3>
+      <dl class="skills-summary">
+        <dt>Programming</dt><dd>C, C++, Python</dd>
+        <dt>Electronics</dt><dd>KiCad, Raspberry Pi, Arduino, soldering, wire crimping</dd>
+        <dt>Systems &amp; Tools</dt><dd>Linux, Git, GitHub, command-line tools</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section id="experience" class="portfolio-section">
+  <h2>Experience</h2>
+  <div class="experience-list">
+    <article class="project-card">
+      <h3>Undergraduate Research Assistant</h3>
+      <p>East Texas A&amp;M University · Commerce, Texas</p>
+      <div class="project-meta">June–August 2026</div>
+      <p class="project-card-link">Operated 0.6 m, 0.7 m, and 1 m telescopes across Texas, Chile, and Spain; calibrated observations and analyzed asteroid lightcurves. <a href="#research">Explore the research</a>.</p>
+    </article>
+    <article class="project-card">
+      <h3>Lead Tutor</h3>
+      <p>Tutoring Club · Allen, Texas</p>
+      <div class="project-meta">January–May 2026</div>
+      <p class="project-card-link">Delivered individualized instruction from foundational literacy through AP Calculus BC, mentored peer tutors, adapted problem-solving approaches to student needs, and reported learning progress to center leadership.</p>
+    </article>
+  </div>
+</section>
+
+<section id="credentials" class="portfolio-section">
+  <h2>Certifications &amp; Affiliations</h2>
+  <ul>
+    <li><strong>IEEE · Texas A&amp;M Student Branch</strong> — Member, joined August 2026</li>
+    <li><strong>CompTIA Linux+</strong> — Earned May 2024</li>
+  </ul>
 </section>
 
 <section id="contact" class="contact">
-  <h2>Contact</h2>
+  <h2>Connect</h2>
   <div class="contact-grid">
     <div class="contact-item">
-      <span class="contact-label">Email</span>
-      <a href="mailto:hello@example.com">Coming Soon!</a>
+      <span class="contact-label">Location</span>
+      <span>College Station, Texas</span>
     </div>
     <div class="contact-item">
       <span class="contact-label">GitHub</span>

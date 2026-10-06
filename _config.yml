@@ -1,5 +1,5 @@
 title: "Caysen's Digital Portfolio"
-description: "A Mac OS X Panther inspired portfolio on GitHub Pages"
+description: "Caysen Mayo's Computer Engineering portfolio: embedded systems, electrical hardware, Linux, and scientific data analysis."
 url: ""
 baseurl: ""
 markdown: kramdown
@@ -11,14 +11,16 @@ collections:
     output: true
     permalink: /projects/:name/
 
-# Use the default build settings for GitHub Pages
+# Build with the project's Jekyll stack; GitHub Actions publishes the output.
 plugins:
   - jekyll-seo-tag
 
 exclude:
   - Gemfile
   - Gemfile.lock
+  - .ruby-version
   - README.md
   - MACOS_PANTHER_HANDOFF.md
   - os_x_jaguar_trafficlights_by_p0t4t0x_d8gk9zc.psd
   - scripts
+  - resume.tex

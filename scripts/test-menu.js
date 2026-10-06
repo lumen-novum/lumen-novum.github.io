@@ -81,10 +81,10 @@ function fixture({ button = true, menu = true, clock = true } = {}) {
   const startButton = new Element("BUTTON", document, {
     "aria-expanded": "false",
     "aria-controls": "startMenu",
-    "aria-label": "Apple menu",
+    "aria-label": "Portfolio menu",
   });
-  const icon = new Element("SVG", startButton);
-  const iconChild = new Element("PATH", icon);
+  const icon = new Element("IMG", startButton);
+  const buttonChild = new Element("SPAN", startButton);
   const startMenu = new Element("NAV", document);
   startMenu.hidden = true;
   const link = new Element("A", startMenu, { href: "/projects/" });
@@ -114,7 +114,7 @@ function fixture({ button = true, menu = true, clock = true } = {}) {
     },
   });
   return {
-    document, startButton, icon, iconChild, startMenu, link, linkChild,
+    document, startButton, icon, buttonChild, startMenu, link, linkChild,
     outside, outsideLink, taskbarClock, intervals, time,
   };
 }
@@ -124,6 +124,18 @@ function assertOpen({ startButton, startMenu }, open) {
   assert.equal(startButton.getAttribute("aria-expanded"), String(open));
 }
 
+test("menu button uses the portfolio image and accessible label instead of the Apple logo", () => {
+  const layout = readFileSync(join(__dirname, "../_layouts/default.html"), "utf8");
+  const button = layout.match(/<button\b[^>]*\bid="startButton"[^>]*>[\s\S]*?<\/button>/)?.[0];
+  assert(button, "Portfolio menu button is missing");
+  assert(button.includes('aria-label="Portfolio menu"'));
+  assert(button.includes('class="portfolio-icon"'));
+  assert(button.includes('"/assets/imgs/favicon.png" | relative_url'));
+  assert(button.includes('alt=""'));
+  assert(!button.includes("<svg"));
+  assert(!button.includes("apple-icon"));
+});
+
 test("button clicks toggle the disclosure without changing native semantics", () => {
   const page = fixture();
   assertOpen(page, false);
@@ -132,17 +144,17 @@ test("button clicks toggle the disclosure without changing native semantics", ()
   dispatch(page.startButton, "click");
   assertOpen(page, false);
   assert.equal(page.startButton.getAttribute("aria-controls"), "startMenu");
-  assert.equal(page.startButton.getAttribute("aria-label"), "Apple menu");
+  assert.equal(page.startButton.getAttribute("aria-label"), "Portfolio menu");
   assert.equal(page.startButton.getAttribute("role"), null);
   assert.equal(page.startMenu.getAttribute("role"), null);
   assert.equal(page.link.getAttribute("role"), null);
 });
 
-test("bubbling icon clicks toggle without being mistaken for outside clicks", () => {
+test("icon and button-descendant clicks are not mistaken for outside clicks", () => {
   const page = fixture();
-  dispatch(page.iconChild, "click");
+  dispatch(page.buttonChild, "click");
   assertOpen(page, true);
-  dispatch(page.iconChild, "click");
+  dispatch(page.buttonChild, "click");
   assertOpen(page, false);
   dispatch(page.icon, "click");
   assertOpen(page, true);
@@ -245,7 +257,7 @@ for (const button of [false, true]) {
         const page = fixture({ button, menu, clock });
         assert.equal(page.intervals.length, clock ? 1 : 0);
         dispatch(page.startButton, "click");
-        dispatch(page.iconChild, "click");
+        dispatch(page.buttonChild, "click");
         dispatch(page.linkChild, "click");
         dispatch(page.outside, "click");
         dispatch(page.document, "keydown", { key: "Escape" });

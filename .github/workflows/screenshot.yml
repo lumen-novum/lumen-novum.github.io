@@ -15,18 +15,15 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.1'
-
-    - name: Install Bundler
-      run: gem install bundler
-
-    - name: Install dependencies
-      run: bundle install
+        bundler-cache: true
 
     - name: Build Jekyll site
       env:
         JEKYLL_ENV: screenshot
       run: bundle exec jekyll build -d _site
+
+    - name: Verify screenshot build
+      run: ruby scripts/test-site.rb --screenshot
 
     - name: Start simple HTTP server (background)
       run: |

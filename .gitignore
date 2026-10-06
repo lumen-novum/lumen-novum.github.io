@@ -10,5 +10,8 @@ node_modules
 .env
 .venv
 
+# Private résumé source (also excluded from Jekyll output)
+/resume.tex
+
 # macOS
 .DS_Store

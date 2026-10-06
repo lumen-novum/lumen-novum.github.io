@@ -110,11 +110,12 @@ button:focus-visible {
   cursor: pointer;
 }
 
-.apple-icon {
-  width: 18px;
+.portfolio-icon {
+  display: block;
+  width: 22px;
   height: 22px;
-  fill: #2379c3;
-  filter: drop-shadow(0 1px 0 #fff);
+  border: 1px solid #000;
+  object-fit: contain;
 }
 
 .start-button:hover {
@@ -126,10 +127,6 @@ button:focus-visible {
   box-shadow: inset 0 1px #77b6f3;
 }
 
-.start-button[aria-expanded="true"] .apple-icon {
-  fill: #fff;
-  filter: drop-shadow(0 1px 0 #164983);
-}
 
 .start-button:focus-visible {
   outline-offset: -3px;
@@ -168,24 +165,6 @@ button:focus-visible {
   font-size: 13px;
 }
 
-.start-menu-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 16px;
-  border-bottom: 1px solid #c2c9d2;
-  background: var(--panther-pinstripe);
-}
-
-.start-menu-logo {
-  font-weight: 700;
-}
-
-.start-menu-version {
-  color: var(--panther-muted);
-  font-size: 11px;
-}
 
 .start-menu-list {
   list-style: none;
@@ -420,7 +399,8 @@ button:focus-visible {
 }
 
 .projects,
-.contact {
+.contact,
+.portfolio-section {
   margin-top: 24px;
   scroll-margin-top: calc(var(--menu-bar-height) + 16px);
 }
@@ -430,7 +410,8 @@ button:focus-visible {
 }
 
 .projects h2,
-.contact h2 {
+.contact h2,
+.portfolio-section h2 {
   margin: 0 0 12px;
   font-size: 18px;
   line-height: 1.3;
@@ -485,6 +466,32 @@ button:focus-visible {
   height: 26px;
   flex: 0 0 26px;
   filter: drop-shadow(0 1px 1px #233b5733);
+}
+
+.project-card .project-card-link {
+  margin-top: 12px;
+}
+
+.experience-list {
+  display: grid;
+  gap: 16px;
+}
+
+.skills-summary {
+  margin: 0;
+  font-size: 13px;
+}
+
+.skills-summary dt {
+  font-weight: 700;
+}
+
+.skills-summary dd {
+  margin: 0 0 10px;
+}
+
+.skills-summary dd:last-child {
+  margin-bottom: 0;
 }
 
 .project-meta {
@@ -550,6 +557,26 @@ button:focus-visible {
 
 .secondary-window {
   max-width: 360px;
+}
+
+@media (min-width: 721px) and (hover: hover) and (pointer: fine) {
+  .window.is-draggable {
+    position: relative;
+    z-index: 5;
+    transform: translate(var(--window-drag-x, 0px), var(--window-drag-y, 0px));
+  }
+
+  .window.is-draggable .window-titlebar {
+    cursor: grab;
+    user-select: none;
+    scroll-margin-top: calc(var(--menu-bar-height) + 8px);
+  }
+
+  .window.is-dragging .window-titlebar {
+    cursor: grabbing;
+  }
+
+
 }
 
 @media (max-width: 720px) {
